@@ -2,6 +2,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import Navbar from '../../components/navigation/Navbar'
 import { useUI } from '../../context/UIContext'
 
+// TransactionDetails component for viewing individual transaction details
 const TransactionDetails = () => {
   const { id } = useParams()
   const navigate = useNavigate()
