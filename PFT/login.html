@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Finance Tracker</title>
+
+  <link href="./src/output.css" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="relative min-h-screen flex flex-col justify-center font-sans">
+
+  <div class="floating-orb orb1"></div>
+  <div class="floating-orb orb2"></div>
+  <div class="floating-orb orb3"></div>
+
+  <div class="intro">
+    <h1 class="text-3xl md:text-5xl font-semibold leading-snug px-6">
+      <span class="block quote-line">See your money clearly.</span>
+      <span class="block quote-line mt-2">Make smarter choices today.</span>
+      <span class="block quote-line mt-2">Build financial freedom for tomorrow.</span>
+    </h1>
+  </div>
+
+  <div class="fade-in flex flex-col md:flex-row w-full h-screen">
+
+    <div class="hidden md:flex md:w-1/2 relative">
+      <img 
+        src="images/main.jpg" 
+        alt="Finance Background" 
+        class="object-cover w-full h-full"
+      />
+    </div>
+
+    <div class="flex w-full md:w-1/2 items-center justify-center p-8 bg-white/10 backdrop-blur-md relative">
+      <div class="frosted-glass rounded-3xl p-10 w-full max-w-md shadow-2xl">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold text-neutral-dark">Welcome Back</h2>
+          <p class="text-sm text-neutral-dark opacity-70 mt-2">
+            Track your wealth, simply and beautifully.
+          </p>
+        </div>
+
+        <form class="space-y-6">
+          <div>
+            <label for="email" class="block text-sm font-medium text-neutral-dark mb-2">Email</label>
+            <input 
+              type="email" 
+              id="email" 
+              placeholder="you@example.com"
+              class="w-full px-4 py-3 rounded-xl bg-white bg-opacity-40 border border-white border-opacity-50 text-neutral-dark placeholder-neutral-dark/50 glow-accent transition backdrop-blur-sm"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="password" class="block text-sm font-medium text-neutral-dark mb-2">Password</label>
+            <input 
+              type="password" 
+              id="password" 
+              placeholder="••••••••"
+              class="w-full px-4 py-3 rounded-xl bg-white bg-opacity-40 border border-white border-opacity-50 text-neutral-dark placeholder-neutral-dark/50 glow-accent transition backdrop-blur-sm"
+              required
+            />
+          </div>
+
+          <div class="flex justify-between items-center text-sm text-neutral-dark">
+            <label class="flex items-center cursor-pointer">
+              <input type="checkbox" class="accent-accent mr-2" />
+              Remember me
+            </label>
+            <a href="#" class="hover:text-primary transition font-medium">Forgot password?</a>
+          </div>
+
+          <a 
+            href="homepage.html" 
+            class="w-full block text-center bg-primary text-white font-semibold py-3 rounded-xl hover:bg-neutral-dark transition shadow-lg">
+            Sign In
+          </a>
+
+          <div class="flex items-center my-6">
+            <div class="flex-grow border-t border-neutral-dark/20"></div>
+            <span class="px-4 text-neutral-dark/70 text-sm">or continue with</span>
+            <div class="flex-grow border-t border-neutral-dark/20"></div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-4">
+            <button type="button" class="social-btn p-3 rounded-xl bg-white bg-opacity-30 border border-white border-opacity-40 backdrop-blur-sm transition">
+              <img src="https://www.svgrepo.com/show/355037/google.svg" class="w-5 mx-auto" alt="Google" />
+            </button>
+            <button type="button" class="social-btn p-3 rounded-xl bg-white bg-opacity-30 border border-white border-opacity-40 backdrop-blur-sm transition">
+              <img src="https://www.svgrepo.com/show/512317/github-142.svg" class="w-5 mx-auto" alt="GitHub" />
+            </button>
+            <button type="button" class="social-btn p-3 rounded-xl bg-white bg-opacity-30 border border-white border-opacity-40 backdrop-blur-sm transition">
+              <img src="https://www.svgrepo.com/show/448224/facebook.svg" class="w-5 mx-auto" alt="Facebook" />
+            </button>
+          </div>
+
+          <div class="text-center mt-6 text-sm text-neutral-dark">
+            Don't have an account?
+            <a href="register.html" class="text-primary font-semibold hover:text-neutral-dark transition">Sign Up</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ Updated footer -->
+  <footer class="w-full bg-white border-t-4 border-yellow-400 text-center text-neutral-dark/70 text-xs py-4 mt-auto">
+    © 2025 Finance Tracker. Secure & Beautiful.
+  </footer>
+
+</body>
+</html>
