@@ -17,7 +17,7 @@ const TransactionList = () => {
         </p>
       </header>
 
-      <section className="bg-white dark:bg-slate-800 mt-6 mx-4 md:mx-8 p-6 rounded-xl shadow-lg border border-honey-drizzle/50 dark:border-slate-700">
+      <section className="bg-white dark:bg-slate-800 mt-6 mx-4 md:mx-8 p-6 rounded-xl shadow-lg border border-honey-drizzle/50 dark:border-slate-700 max-w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 items-end">
           <div className="lg:col-span-2">
             <label className="text-sm text-coffee-grounds/90 dark:text-gray-300 mb-1 block">Search</label>

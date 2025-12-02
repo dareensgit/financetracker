@@ -23,7 +23,7 @@ const AddEditTransaction = () => {
         <p className="text-coffee-grounds/70 dark:text-gray-400 mt-1">Fill in the transaction details below</p>
       </header>
 
-      <section className="bg-white dark:bg-slate-800 mt-6 mx-4 md:mx-auto p-6 rounded-xl shadow-lg border border-honey-drizzle/50 dark:border-slate-700 max-w-3xl mb-8">
+      <section className="bg-white dark:bg-slate-800 mt-6 mx-4 md:mx-auto p-6 rounded-xl shadow-lg border border-honey-drizzle/50 dark:border-slate-700 max-w-3xl mb-8 w-full">
         <form className="space-y-6" onSubmit={handleSubmit}>
 
           <div>
