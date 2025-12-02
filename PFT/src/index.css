@@ -33,6 +33,13 @@ body {
   overflow-x: hidden;
 }
 
+/* Responsive improvements for transaction pages */
+@media (max-width: 640px) {
+  .transaction-container {
+    padding: 1rem;
+  }
+}
+
 /* Frosted Glass */
 .frosted-glass {
   background: rgba(255, 255, 255, 0.25);
