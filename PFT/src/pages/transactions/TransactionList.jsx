@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Navbar from '../../components/navigation/Navbar'
 import { useUI } from '../../context/UIContext'
 
+// TransactionList component for displaying all transactions
 const TransactionList = () => {
   const { isDarkMode } = useUI()
 
