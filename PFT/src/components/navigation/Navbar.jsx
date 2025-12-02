@@ -31,6 +31,7 @@ const Navbar = ({ currentPage = '' }) => {
         <div className="hidden md:flex items-center gap-6">
           <Link to="/dashboard" className={isActive('dashboard')}>Dashboard</Link>
           <Link to="/transactions" className={isActive('transactions')}>Transactions</Link>
+          {/* Navigation links connected to transaction pages */}
           <Link to="/profile" className={isActive('profile')}>Profile</Link>
           <Link to="/home" className={isActive('home')}>Home</Link>
           <button
