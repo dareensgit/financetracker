@@ -2,6 +2,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import Navbar from '../../components/navigation/Navbar'
 import { useUI } from '../../context/UIContext'
 
+// AddEditTransaction component for adding and editing transactions
 const AddEditTransaction = () => {
   const navigate = useNavigate()
   const { id } = useParams()
