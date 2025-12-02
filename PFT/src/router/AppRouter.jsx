@@ -8,6 +8,7 @@ import TransactionList from '../pages/transactions/TransactionList'
 import TransactionDetails from '../pages/transactions/TransactionDetails'
 import AddEditTransaction from '../pages/transactions/AddEditTransaction'
 
+// Router configuration including transaction routes
 const AppRouter = () => {
   return (
     <Routes>
