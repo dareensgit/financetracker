@@ -1,4 +1,4 @@
-// Utility helper functions
+// Utility helper functions for transactions
 
 export const formatCurrency = (amount) => {
   return new Intl.NumberFormat('en-US', {
