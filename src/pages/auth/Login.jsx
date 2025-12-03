@@ -1,12 +1,28 @@
+import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useUI } from '../../context/UIContext'
+import { Button, Input, Checkbox } from '../../components/ui'
 
 const Login = () => {
   const navigate = useNavigate()
-  const { isDarkMode } = useUI()
+  const { isDarkMode, showNotification } = useUI()
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+    rememberMe: false,
+  })
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value,
+    }))
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    showNotification('Login successful!', 'success')
     navigate('/home')
   }
 
@@ -43,41 +59,48 @@ const Login = () => {
             </div>
 
             <form className="space-y-6" onSubmit={handleSubmit}>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-neutral-dark dark:text-gray-200 mb-2">Email</label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  placeholder="you@example.com"
-                  className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-700 bg-opacity-40 dark:bg-opacity-60 border border-white dark:border-slate-600 border-opacity-50 text-neutral-dark dark:text-gray-100 placeholder-neutral-dark/50 dark:placeholder-gray-400 glow-accent transition backdrop-blur-sm"
-                  required
+              <Input
+                label="Email"
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="you@example.com"
+                required
+              />
+
+              <Input
+                label="Password"
+                type="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                placeholder="••••••••"
+                required
+              />
+
+              <div className="flex justify-between items-center text-sm">
+                <Checkbox
+                  label="Remember me"
+                  name="rememberMe"
+                  checked={formData.rememberMe}
+                  onChange={handleChange}
                 />
+                <a href="#" className={`hover:text-primary dark:hover:text-blue-400 transition font-medium ${
+                  isDarkMode ? 'text-gray-200' : 'text-neutral-dark'
+                }`}>
+                  Forgot password?
+                </a>
               </div>
 
-              <div>
-                <label htmlFor="password" className="block text-sm font-medium text-neutral-dark dark:text-gray-200 mb-2">Password</label>
-                <input 
-                  type="password" 
-                  id="password" 
-                  placeholder="••••••••"
-                  className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-700 bg-opacity-40 dark:bg-opacity-60 border border-white dark:border-slate-600 border-opacity-50 text-neutral-dark dark:text-gray-100 placeholder-neutral-dark/50 dark:placeholder-gray-400 glow-accent transition backdrop-blur-sm"
-                  required
-                />
-              </div>
-
-              <div className="flex justify-between items-center text-sm text-neutral-dark dark:text-gray-200">
-                <label className="flex items-center cursor-pointer">
-                  <input type="checkbox" className="accent-accent mr-2" />
-                  Remember me
-                </label>
-                <a href="#" className="hover:text-primary dark:hover:text-blue-400 transition font-medium">Forgot password?</a>
-              </div>
-
-              <button 
+              <Button
                 type="submit"
-                className="w-full block text-center bg-primary dark:bg-blue-600 text-white font-semibold py-3 rounded-xl hover:bg-neutral-dark dark:hover:bg-blue-700 transition shadow-lg">
+                variant="primary"
+                fullWidth
+                size="lg"
+              >
                 Sign In
-              </button>
+              </Button>
 
               <div className="flex items-center my-6">
                 <div className="flex-grow border-t border-neutral-dark/20 dark:border-gray-600"></div>
