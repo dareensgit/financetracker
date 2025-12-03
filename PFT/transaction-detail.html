@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FinTrack - Transaction Detail</title>
+    <link href="./src/output.css" rel="stylesheet" />
+  </head>
+
+  <body class="bg-gradient-to-br from-sea-blue/5 to-matcha/5 text-coffee-grounds font-sans min-h-screen">
+    
+    <!-- ✅ Global Navigation Bar -->
+    <nav class="bg-sea-blue shadow-lg px-4 md:px-6 py-3">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center gap-3">
+          <div class="bg-lemonade w-10 h-10 flex items-center justify-center rounded-full text-coffee-grounds font-bold">
+            <svg class="w-6 h-6 text-sea-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <span class="font-semibold text-lg text-white">FinTrack</span>
+        </div>
+
+        <!-- Desktop Links -->
+        <div class="hidden md:flex items-center gap-6">
+          <a href="dashboard.html" class="text-white/70 hover:text-lemonade">Dashboard</a>
+          <a href="transaction-list.html" class="text-lemonade font-semibold">Transactions</a>
+          <a href="profile.html" class="text-white/70 hover:text-lemonade">Profile</a>
+          <a href="homepage.html" class="text-white/70 hover:text-lemonade">Home</a>
+          <button onclick="window.location.href='transaction-add-edit.html'"
+            class="bg-lemonade hover:bg-opacity-90 text-coffee-grounds font-bold px-4 py-2 rounded-lg shadow-md">
+            + Add Transaction
+          </button>
+          <button onclick="logout()" class="text-white/70 hover:text-lemonade font-semibold">
+            Logout
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="menu-btn" class="text-white focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden hidden mt-4 space-y-2">
+        <a href="dashboard.html" class="block px-4 py-2 rounded text-white/70 hover:bg-white/10">Dashboard</a>
+        <a href="transaction-list.html" class="block px-4 py-2 rounded text-lemonade font-semibold bg-lemonade/10">Transactions</a>
+        <a href="profile.html" class="block px-4 py-2 rounded text-white/70 hover:bg-white/10">Profile</a>
+        <a href="homepage.html" class="block px-4 py-2 rounded text-white/70 hover:bg-white/10">Home</a>
+        <button onclick="window.location.href='transaction-add-edit.html'"
+          class="w-full bg-lemonade hover:bg-opacity-90 text-coffee-grounds font-bold px-4 py-2 rounded-lg shadow-md">
+          + Add Transaction
+        </button>
+        <button onclick="logout()" class="block w-full px-4 py-2 text-left text-white/70 hover:bg-white/10">Logout</button>
+      </div>
+    </nav>
+
+    <!-- ✅ Page Header -->
+    <header class="px-4 md:px-8 pt-8">
+      <h1 class="text-2xl font-bold text-coffee-grounds">Transaction Detail</h1>
+      <p class="text-coffee-grounds/70 mt-1">View and manage this transaction</p>
+    </header>
+
+    <!-- ✅ Transaction Details Section -->
+    <section class="bg-white mt-6 mx-4 md:mx-auto p-6 rounded-xl shadow-lg max-w-3xl border border-honey-drizzle/50">
+      <div class="space-y-4 divide-y divide-honey-drizzle/50">
+        
+        <div class="pt-4 first:pt-0">
+          <h2 class="text-coffee-grounds/70 text-sm">Date</h2>
+          <p class="text-coffee-grounds font-medium">October 27, 2025</p>
+        </div>
+
+        <div class="pt-4">
+          <h2 class="text-coffee-grounds/70 text-sm">Amount</h2>
+          <p class="text-matcha font-semibold text-lg">+ $4,500.00</p>
+        </div>
+
+        <div class="pt-4">
+          <h2 class="text-coffee-grounds/70 text-sm">Category</h2>
+          <p class="text-coffee-grounds font-medium">Salary</p>
+        </div>
+
+        <div class="pt-4">
+          <h2 class="text-coffee-grounds/70 text-sm">Type</h2>
+          <p class="text-coffee-grounds font-medium">Income</p>
+        </div>
+
+        <div class="pt-4">
+          <h2 class="text-coffee-grounds/70 text-sm">Notes</h2>
+          <p class="text-coffee-grounds/90">Monthly paycheck deposit.</p>
+        </div>
+      </div>
+
+      <div class="mt-8 flex justify-end gap-3">
+        <button onclick="window.location.href='transaction-list.html'" class="px-4 py-2 border border-honey-drizzle rounded-lg text-coffee-grounds/90 hover:bg-honey-drizzle/10 transition-colors">
+          Back to List
+        </button>
+        <button class="px-4 py-2 bg-gradient-to-r from-lemonade to-honey-drizzle hover:bg-opacity-90 text-coffee-grounds font-bold rounded-lg shadow-md transition-colors">
+          Edit
+        </button>
+        <button class="px-4 py-2 bg-transparent border border-coffee-grounds text-coffee-grounds hover:bg-coffee-grounds/10 rounded-lg shadow transition-colors">
+          Delete
+        </button>
+      </div>
+    </section>
+
+    <!-- ✅ Footer -->
+    <footer class="bg-coffee-grounds text-white py-12 mt-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <div class="space-y-4">
+            <div class="flex items-center space-x-2">
+              <div class="w-10 h-10 bg-sea-blue rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-lemonade" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <span class="text-2xl font-bold">FinTrack</span>
+            </div>
+            <p class="text-white/70">Take control of your money, simply.</p>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Product</h4>
+            <ul class="space-y-2 text-white/70">
+              <li><a href="#" class="hover:text-lemonade transition-colors">Features</a></li>
+              <li><a href="#" class="hover:text-lemonade transition-colors">Pricing</a></li>
+              <li><a href="#" class="hover:text-lemonade transition-colors">Security</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Company</h4>
+            <ul class="space-y-2 text-white/70">
+              <li><a href="#" class="hover:text-lemonade transition-colors">About</a></li>
+              <li><a href="#" class="hover:text-lemonade transition-colors">Blog</a></li>
+              <li><a href="#" class="hover:text-lemonade transition-colors">Careers</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Connect</h4>
+            <div class="flex space-x-4">
+              <a href="#" class="w-10 h-10 bg-white/10 hover:bg-lemonade rounded-lg flex items-center justify-center transition-colors" aria-label="Twitter">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                </svg>
+              </a>
+              <a href="#" class="w-10 h-10 bg-white/10 hover:bg-lemonade rounded-lg flex items-center justify-center transition-colors" aria-label="Facebook">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                </svg>
+              </a>
+              <a href="#" class="w-10 h-10 bg-white/10 hover:bg-lemonade rounded-lg flex items-center justify-center transition-colors" aria-label="LinkedIn">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-white/10 pt-8 text-center text-white/70">
+          <p>&copy; 2025 FinTrack. All rights reserved. | 
+            <a href="#" class="hover:text-lemonade">Privacy Policy</a> | 
+            <a href="#" class="hover:text-lemonade">Terms of Service</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- <script>
+      document.getElementById("menu-btn")?.addEventListener("click", () => {
+        document.getElementById("mobile-menu").classList.toggle("hidden");
+      });
+
+      function logout() {
+        window.location.href = "login.html";
+      }
+    </script> -->
+  </body>
+</html>
